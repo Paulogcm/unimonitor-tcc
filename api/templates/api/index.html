@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Unimonitor</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+	<ul>
+		<form method="POST">
+			{% csrf_token %}
+			<button>Atualizar</button>
+		</form>
+	</ul>
+	<ul>
+		<img src="/media/heatmap.png">
+		<p></p>
+		<table id="lista">
+			<tr class="th">
+				<th>Horário</th>
+				<th>Tag</th>
+				<th>Usuários conectados</th>
+			</tr>
+		</table>
+	</ul>
+</body>
+</html>
+<script type="text/javascript">
+	
+fetch('/media/LogUsersOut.txt')
+.then(response => response.text())
+.then(text => {
+	array = text.split("\n");
+	for(var j = 0; j < (((array.length)-1)/3); j++){
+		let row = document.createElement('tr');
+		var count = j * 3
+		var auxCount = count + 2
+		for(var i = 0; i < (array.length)-1; i++){
+			let col = document.createElement('th');
+			if (count <= auxCount){
+				col.appendChild(document.createTextNode(array[count]));
+				row.appendChild(col);
+				count++;
+			}
+		}
+		lista.appendChild(row);
+	}
+})
+
+</script>

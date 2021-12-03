@@ -1,0 +1,39 @@
+table {
+	width: 30%;
+	height: 60px;
+	text-align: center;
+	background-color: #FFFFFF;
+	border: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-collapse: collapse;
+}
+.th {
+	height: 50px;
+	background-color: #555555;
+	color: white;
+}
+tr {
+	height: 40px;
+	vertical-align: middle;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	font-family: Sans-serif;
+	font-size: 15px;
+}
+
+button {
+	background-color: #555555;
+	border: none;
+	color: white;
+	padding: 12px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 10px;
+	transition-duration: 0.4s;
+}
+button:hover {
+	background-color: #4CAF50; /* Green */
+	color: white;
+}
